@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textViewRes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/textview_bg"
+                android:gravity="center"
+                android:textColor="@color/textColor"
+                android:textSize="48sp"
+                android:textDirection="ltr"
+                android:layoutDirection="ltr"
+                tools:ignore="NestedWeights" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonDEC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="DEC" />
+
+            <Button
+                android:id="@+id/buttonHEX"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="HEX" />
+
+            <Button
+                android:id="@+id/buttonBIN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="BIN" />
+
+            <Button
+                android:id="@+id/buttonOCT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="OCT" />
+
+            <Button
+                android:id="@+id/buttonDEL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="DEL" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="funcNumber"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonLN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="@string/ln"
+                android:background="@drawable/button_bg"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonSeven1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/buttonEight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/buttonNine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/buttonPlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcOperator"
+                android:background="@drawable/button_bg"
+                android:text="+" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonPower"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="^" />
+
+            <Button
+                android:id="@+id/buttonFour1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/buttonFive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/buttonSix"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/buttonMinus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcOperator"
+                android:background="@drawable/button_bg"
+                android:text="-" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSqrt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="Sqrt" />
+
+            <Button
+                android:id="@+id/buttonOne1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/buttonTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:text="2"
+                android:background="@drawable/button_bg"
+                />
+
+            <Button
+                android:id="@+id/buttonThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/buttonMulti"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcOperator"
+                android:background="@drawable/button_bg"
+                android:text="*" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="ClearText"
+                android:background="@drawable/button_bg"
+                android:text="AC" />
+
+            <Button
+                android:id="@+id/buttonAns"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="ANS" />
+
+            <Button
+                android:id="@+id/buttonZero"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/buttonEqual"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:onClick="onEqual"
+                android:text="=" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="funcOperator"
+                android:background="@drawable/button_bg"
+                android:text="/" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
