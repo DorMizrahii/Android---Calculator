@@ -1,7 +1,6 @@
 package com.example.calculator;
-
+import java.text.DecimalFormat;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     boolean isNewOp = true; // Flag to indicate a new operation
     String operator = null;
     boolean isOperatorPressed = false;
+    boolean isError = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void funcNumber(View view) {
+        if(isError){
+            ClearText(view);
+            isError = false;
+        }
+        Button button = (Button) view;
+        String clickBtn = button.getText().toString();
         if(isNewOp) {
             result.setText("");
         }
         isNewOp = false;
-
-        Button button = (Button) view;
-        String clickBtn = button.getText().toString();
+        if(result.getText().toString().startsWith("0"))
+            return;
         result.append(clickBtn);
     }
 
@@ -39,9 +44,12 @@ public class MainActivity extends AppCompatActivity {
         firstNumber = null;
         operator = null;
         isNewOp = true;
+        isError = false;
     }
 
     public void funcOperator(View view) {
+        if(isError)
+            return;
         String currentText = result.getText().toString();
         Button button = (Button) view;
         String clickOperator = button.getText().toString();
@@ -103,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                     firstNumber = null;
                     operator = null;
                     isOperatorPressed = false;
+                    isError = true;
                     return;
                 } else {
                     calculationResult = firstNumber / secondNumber;
@@ -114,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
         if (calculationResult == (long) calculationResult) {
             result.setText(String.format("%d", (long) calculationResult));
         } else {
-            result.setText(String.format("%s", calculationResult));
+            DecimalFormat decimalFormat = new DecimalFormat("#.#####");
+            result.setText(decimalFormat.format(calculationResult));
         }
         firstNumber = calculationResult; // Store result for consecutive calculations
         operator = null;
@@ -124,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         if(!isNewOp) {
             performCalculation();
             isNewOp = true;
-            firstNumber = null;
+//            firstNumber = null;
             operator = null;
         }
     }
