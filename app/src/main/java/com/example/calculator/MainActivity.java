@@ -48,32 +48,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void funcOperator(View view) {
-        if(isError)
-            return;
-        String currentText = result.getText().toString();
+        if (isError) return;
         Button button = (Button) view;
         String clickOperator = button.getText().toString();
 
-        // If the current text is empty and the minus operator is clicked, let it be the first character
-        if (currentText.isEmpty() && clickOperator.equals("-")) {
-            result.setText(clickOperator);
-            isNewOp = false;
+        if (!isNewOp && !endsWithOperator(result.getText().toString())) {
+            performCalculation();
+            firstNumber = Double.parseDouble(result.getText().toString());
+            isNewOp = true; // A new operation starts after calculation
         }
-        // If the current text is not empty and does not end with an operator, append the new operator
-        else if (!currentText.isEmpty() && !endsWithOperator(currentText)) {
-            if(!isNewOp) {
-                performCalculation();
-                firstNumber = Double.parseDouble(result.getText().toString());
-                isNewOp = true; // A new operation starts after calculation
-            }
+
+        if (clickOperator.equals("√") || clickOperator.equals("ln")) {
+            operator = clickOperator;
+            result.append(clickOperator + "( ");
+        } else {
+            operator = clickOperator;
             result.append(" " + clickOperator + " ");
         }
-        // Save the clicked operator for calculation
-        if (isNewOp) {
-            operator = clickOperator;
-            isNewOp = false;
-        }
+
+        isNewOp = false;
     }
+
 
     private boolean endsWithOperator(String text) {
         // Check if the text ends with a space followed by an operator
@@ -82,52 +77,70 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
     private void performCalculation() {
-        if (operator == null || firstNumber == null) return;
+        if (operator == null) return;
 
-        String text = result.getText().toString();
-        double secondNumber;
-        if(text.endsWith(operator)) {
-            secondNumber = firstNumber;
-        } else {
-            String numberStr = text.substring(text.indexOf(operator) + 1);
-            secondNumber = Double.parseDouble(numberStr);
+        double secondNumber = 0.0;
+        boolean isUnaryOperation = operator.equals("√") || operator.equals("ln");
+
+        if (!isUnaryOperation && firstNumber == null) {
+            String text = result.getText().toString();
+            String numberStr = text.substring(0, text.indexOf(operator)).trim();
+            firstNumber = Double.parseDouble(numberStr);
         }
+
+        if (!isUnaryOperation) {
+            String text = result.getText().toString();
+            String numberStr = text.substring(text.indexOf(operator) + 1).trim();
+            secondNumber = numberStr.isEmpty() ? firstNumber : Double.parseDouble(numberStr);
+        }
+
         double calculationResult = 0.0;
 
-        // ... calculation logic ...
-        switch (operator) {
-            case "+":
-                calculationResult = firstNumber + secondNumber;
-                break;
-            case "-":
-                calculationResult = firstNumber - secondNumber;
-                break;
-            case "*":
-                calculationResult = firstNumber * secondNumber;
-                break;
-            case "/":
-                if (secondNumber == 0) {
-                    result.setText("Error");
-                    firstNumber = null;
-                    operator = null;
-                    isOperatorPressed = false;
-                    isError = true;
-                    return;
-                } else {
+        // Extended calculation logic
+        try {
+            switch (operator) {
+                case "+":
+                    calculationResult = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    calculationResult = firstNumber - secondNumber;
+                    break;
+                case "X":
+                    calculationResult = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    if (secondNumber == 0) throw new ArithmeticException("Cannot divide by zero");
                     calculationResult = firstNumber / secondNumber;
-                }
-                break;
+                    break;
+                case "^":
+                    calculationResult = Math.pow(firstNumber, secondNumber);
+                    break;
+                case "√":
+                    if (firstNumber < 0) throw new ArithmeticException("Square root of negative number");
+                    calculationResult = Math.sqrt(firstNumber);
+                    break;
+                case "ln":
+                    if (firstNumber <= 0) throw new ArithmeticException("Log of non-positive number");
+                    calculationResult = Math.log(firstNumber);
+                    break;
+            }
+
+            if (calculationResult == (long) calculationResult) {
+                result.setText(String.format("%d", (long) calculationResult));
+            } else {
+                DecimalFormat decimalFormat = new DecimalFormat("#.#####");
+                result.setText(decimalFormat.format(calculationResult));
+            }
+
+            firstNumber = calculationResult;
+        } catch (ArithmeticException e) {
+            result.setText("Error: " + e.getMessage());
+            firstNumber = null;
+            isError = true;
         }
 
-        // Check if the result is an integer and display accordingly
-        if (calculationResult == (long) calculationResult) {
-            result.setText(String.format("%d", (long) calculationResult));
-        } else {
-            DecimalFormat decimalFormat = new DecimalFormat("#.#####");
-            result.setText(decimalFormat.format(calculationResult));
-        }
-        firstNumber = calculationResult; // Store result for consecutive calculations
         operator = null;
+        isOperatorPressed = false;
     }
 
     public void onEqual(View view) {

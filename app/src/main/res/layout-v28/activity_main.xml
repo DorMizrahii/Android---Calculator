@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -42,46 +43,66 @@
                 android:id="@+id/buttonDEC"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="DEC" />
+                android:elevation="5dp"
+                android:letterSpacing="0.2"
+                android:text="DEC"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonHEX"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="HEX" />
+                android:elevation="5dp"
+                android:letterSpacing="0.2"
+                android:text="HEX"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonBIN"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="BIN" />
+                android:elevation="5dp"
+                android:letterSpacing="0.2"
+                android:text="BIN"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonOCT"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="OCT" />
+                android:elevation="5dp"
+                android:letterSpacing="0.2"
+                android:text="OCT"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonDEL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="DEL" />
+                android:elevation="5dp"
+                android:letterSpacing="0.2"
+                android:text="DEL"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,11 +116,12 @@
                 android:id="@+id/buttonLN"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_ln"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="ln"
                 android:textAllCaps="false" />
@@ -108,11 +130,12 @@
                 android:id="@+id/buttonSeven"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_7"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="7" />
 
@@ -120,11 +143,12 @@
                 android:id="@+id/buttonEight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_8"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="8" />
 
@@ -132,11 +156,12 @@
                 android:id="@+id/buttonNine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_9"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="9" />
 
@@ -144,11 +169,12 @@
                 android:id="@+id/buttonPlus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_plus"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="+" />
         </LinearLayout>
@@ -163,11 +189,12 @@
                 android:id="@+id/buttonPower"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_power"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="^" />
 
@@ -175,11 +202,12 @@
                 android:id="@+id/buttonFour"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_4"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="4" />
 
@@ -187,11 +215,12 @@
                 android:id="@+id/buttonFive"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_5"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="5" />
 
@@ -199,11 +228,12 @@
                 android:id="@+id/buttonSix"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_6"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="6" />
 
@@ -211,11 +241,12 @@
                 android:id="@+id/buttonMinus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_minus"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="-" />
         </LinearLayout>
@@ -230,11 +261,12 @@
                 android:id="@+id/buttonSqrt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_sqrt"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="√" />
 
@@ -243,11 +275,12 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_1"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:scaleType="fitCenter"
                 android:text="1" />
@@ -256,11 +289,12 @@
                 android:id="@+id/buttonTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_2"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="2" />
 
@@ -268,11 +302,12 @@
                 android:id="@+id/buttonThree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_3"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcNumber"
                 android:text="3" />
 
@@ -280,11 +315,12 @@
                 android:id="@+id/buttonMultiply"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_multiply"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="X" />
         </LinearLayout>
@@ -300,11 +336,12 @@
                 android:id="@+id/buttonAC"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_ac"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="ClearText"
                 android:text="AC" />
 
@@ -312,34 +349,37 @@
                 android:id="@+id/buttonAns"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_ans"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:text="ANS" />
 
             <Button
                 android:id="@+id/buttonZero"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:onClick="funcNumber"
+                android:background="@drawable/button_bg"
                 android:drawableTop="@drawable/resized_icon_0"
                 android:drawablePadding="50dp"
-                android:background="@drawable/button_bg"
+                android:elevation="5dp"
+                android:onClick="funcNumber"
                 android:text="0" />
 
             <Button
                 android:id="@+id/buttonEqual"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_equal"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="onEqual"
                 android:text="=" />
 
@@ -347,11 +387,12 @@
                 android:id="@+id/buttonDivide"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/unique_operators_bg"
                 android:drawableTop="@drawable/resized_icon_divide"
                 android:drawablePadding="50dp"
+                android:elevation="5dp"
                 android:onClick="funcOperator"
                 android:text="/" />
         </LinearLayout>

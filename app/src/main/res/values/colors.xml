@@ -1,8 +1,24 @@
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="buttonColor">#FF9800</color>
-    <color name="textColor">#FFFFFF</color>
-    <color name="backgroundColor">#263238</color>
+<!--    <color name="colorPrimary">#6200EE</color>-->
+<!--    <color name="colorPrimaryDark">#3700B3</color>-->
+<!--    <color name="colorAccent">#03DAC5</color>-->
+<!--    <color name="buttonColor">#FF9800</color>-->
+<!--    <color name="buttonColorStrokePressed">#FF5722</color>-->
+<!--    <color name="textColor">#FF000000</color>-->
+
+        <color name="colorPrimary">#5A2328</color>
+        <color name="colorPrimaryDark">#355070</color>
+        <color name="colorAccent">#E8E8E8</color>
+        <color name="buttonColor">#BFBFBF</color>
+        <color name="buttonColorStrokePressed">#FF5722</color>
+        <color name="textColor">#FF000000</color>
+        <color name="uniqueOperatorsColor">#A3A3A3</color>
+
+
 </resources>
+    <!--    <color name="colorPrimary">#6200EE</color>-->
+    <!--    <color name="colorPrimaryDark">#3700B3</color>-->
+    <!--    <color name="colorAccent">#03DAC5</color>-->
+    <!--    <color name="buttonColor">#FF9800</color>-->
+    <!--    <color name="buttonColorStrokePressed">#FF5722</color>-->
+    <!--    <color name="textColor">#FF000000</color>-->
