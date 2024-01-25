@@ -81,6 +81,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
+                android:onClick="onDel"
                 android:text="DEL" />
         </LinearLayout>
 
