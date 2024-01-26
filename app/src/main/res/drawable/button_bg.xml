@@ -1,14 +1,27 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/colorAccent"/>
+            <gradient
+                android:startColor="@color/colorPrimaryDark"
+                android:endColor="@color/colorAccent"
+                android:angle="135"/>
             <corners android:radius="8dp"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/buttonColorStrokePressed"/>
         </shape>
     </item>
+
     <item>
         <shape>
-            <solid android:color="@color/buttonColor"/>
+            <gradient
+                android:startColor="@color/colorPrimaryDark"
+                android:endColor="@color/buttonColor"
+                android:angle="135"/>
             <corners android:radius="8dp"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorAccent"/>
         </shape>
     </item>
 </selector>

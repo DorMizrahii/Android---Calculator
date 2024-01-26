@@ -270,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
         convertNumber(8);
     }
 
+    @SuppressLint("SetTextI18n")
     private void convertNumber(int base) {
         String display = result.getText().toString();
         try {
@@ -314,15 +315,19 @@ public class MainActivity extends AppCompatActivity {
             result.setText(converted.toUpperCase());
         } catch (NumberFormatException e) {
             result.setText("Error: Invalid Number");
+            isError = true;
         } catch (IllegalStateException e) {
             result.setText("Error: " + e.getMessage());
+            isError = true;
         }
     }
+    @SuppressLint("SetTextI18n")
     private long BaseToDecimal(String number, int base) {
         try {
             return Long.parseLong(number, base);
         } catch (NumberFormatException e) {
             result.setText("Error: Invalid Number Format");
+            isError = true;
             return -1; // Return -1 or handle the error as you see fit
         }
     }
